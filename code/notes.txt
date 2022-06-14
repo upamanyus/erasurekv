@@ -1,0 +1,29 @@
+Want erasure code without needing to do finite field arithmetic for q > 2.
+
+Model:
+Data is an (n⋅k)-vector.
+Want to generate m outputs each of which is an n-vector each such that any k of
+the m suffice to reconstruct the original data.
+
+Each of the m outputs can be given by a linear transform
+
+A_j ∈ Hom(F_2^{n⋅k}, F_2^n).
+
+We can combine matrices (A, B) by doing
+ [A  B] ∈ Hom(F_2^{n⋅k}, F_2^{2n})
+
+Claim:
+[I 0 0  0  0  0]
+[0 I 0  0  0  0]
+[0 0 I  0  0  0]
+[0 0 0  I  0  0]
+[0 0 0  0  I  0]
+[0 0 0  0  0  I]
+[I I I  I  I  I]
+[I M M2 M4 M8 M16]
+
+Any 6 rows of the above will make an invertible matrix.
+
+
+Require n to be sufficiently big (e.g. 1024 should be plenty)
+Is a
